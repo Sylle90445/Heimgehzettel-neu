@@ -4,11 +4,10 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 4000; // Nimm nur eine PORT-Variable!
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
-// CORS & JSON Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -60,11 +59,7 @@ app.post('/login', (req, res) => {
   res.json({ result: 'success', user: { username: user.username, email: user.email } });
 });
 
-// HIER UND NUR HIER der Server-Start:
+// Server-Start (nur EINMAL!)
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
-});
-
-app.listen(PORT, () => {
-  console.log(`Proxy läuft auf http://localhost:${PORT}`);
 });

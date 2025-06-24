@@ -1,3 +1,6 @@
+// === Backend-URL für API-Requests (hier Render-URL eintragen) ===
+const BACKEND_URL = 'https://heimgehzettel-neu-9.onrender.com'; // <--- Render-URL eingetragen
+
 // Warten, bis das DOM vollständig geladen ist
 document.addEventListener('DOMContentLoaded', function() {
     // Login-Modal Funktionalität
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const role = document.getElementById('registerRole') ? document.getElementById('registerRole').value : 'user';
         const adminPassword = document.getElementById('adminPassword') ? document.getElementById('adminPassword').value : undefined;
         // Anfrage an lokalen Proxy senden
-        fetch('http://localhost:3000/register', {
+        fetch(`${BACKEND_URL}/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password, role, adminPassword })
@@ -161,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const role = document.getElementById('role') ? document.getElementById('role').value : 'user';
-        fetch('http://localhost:3000/login', {
+        fetch(`${BACKEND_URL}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password, role })

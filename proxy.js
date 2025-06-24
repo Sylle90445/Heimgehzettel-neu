@@ -1,20 +1,18 @@
 const express = require('express');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const cors = require('cors');
-const port = process.env.PORT || 4000
+const fs = require('fs');
+const path = require('path');
+
+const PORT = process.env.PORT || 4000; // Nimm nur eine PORT-Variable!
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server läuft auf Port ${PORT}`);
-});
 
-// CORS für alle Routen erlauben
+// CORS & JSON Middleware
 app.use(cors());
 app.use(express.json());
 
-const fs = require('fs');
-const DB_PATH = __dirname + '/db.json';
+const DB_PATH = path.join(__dirname, 'db.json');
 
 function readUsers() {
   if (!fs.existsSync(DB_PATH)) return [];
@@ -60,6 +58,11 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ result: 'error', message: 'Benutzername/E-Mail oder Passwort falsch!' });
   }
   res.json({ result: 'success', user: { username: user.username, email: user.email } });
+});
+
+// HIER UND NUR HIER der Server-Start:
+app.listen(PORT, () => {
+  console.log(`Server läuft auf Port ${PORT}`);
 });
 
 app.listen(PORT, () => {

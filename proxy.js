@@ -5,12 +5,12 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 4000;
-
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+// Statische Frontend-Dateien aus dem Projekt-Hauptverzeichnis bereitstellen:
 app.use(express.static(__dirname));
 
 const DB_PATH = path.join(__dirname, 'db.json');
@@ -61,7 +61,7 @@ app.post('/login', (req, res) => {
   res.json({ result: 'success', user: { username: user.username, email: user.email } });
 });
 
-// Server-Start (nur EINMAL!)
+// SERVER-START (nur EINMAL!)
 app.listen(PORT, () => {
   console.log(`Server läuft auf Port ${PORT}`);
 });

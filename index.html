@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heimgehzettel Grundschule Auma</title>
+    <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Keine globalen #userDisplay-Styles mehr! */
+  </style>
+</head>
+<body>
+  <div style="margin-left:24px; margin-top:24px; display:flex; flex-direction:column; align-items:flex-start; gap:12px;">
+    <button id="loginBtn" class="login-btn">Anmelden</button>
+    <div id="userDisplay" style="display:none; padding:8px 16px; background:#f2f2f2; color:#333; border-radius:20px; box-shadow:0 2px 8px rgba(0,0,0,0.06); font-weight:bold;"></div>
+  </div>
+
+  <div id="loginRequiredModal" style="display:none;position:fixed;top:120px;left:0;width:100vw;height:auto;background:rgba(0,0,0,0.0);z-index:2000;justify-content:center;align-items:flex-start;pointer-events:none;">
+    <div style="background:#fff;padding:32px 40px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.18);font-size:1.2em;text-align:center;max-width:90vw;pointer-events:auto;">
+      <b>Zum Ausfüllen eines Hortzettels bitte anmelden</b>
+    </div>
+  </div>
+
+
+    <div class="login-modal" id="loginModal" style="display:none;">
+      <div class="login-modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Anmeldung</h2>
+        <form id="loginForm">
+          <label for="username">Benutzername:</label>
+          <input type="text" id="username" name="username" required><br>
+          <label for="password">Passwort:</label>
+          <input type="password" id="password" name="password" required><br>
+          <button type="submit">Login</button>
+        </form>
+        <p style="text-align:center;margin-top:12px;">
+          <a href="#" id="showRegisterModal">Noch kein Konto? Jetzt registrieren!</a>
+        </p>
+      </div>
+    </div>
+    <div class="login-modal" id="registerModal" style="display:none;">
+      <div class="login-modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Registrieren</h2>
+        <form id="registerForm">
+          <label for="registerUsername">Benutzername:</label>
+          <input type="text" id="registerUsername" name="registerUsername" required><br>
+          <label for="registerEmail">E-Mail:</label>
+          <input type="email" id="registerEmail" name="registerEmail" required><br>
+          <label for="registerPassword">Passwort:</label>
+          <input type="password" id="registerPassword" name="registerPassword" required><br>
+          <label for="registerPasswordRepeat">Passwort wiederholen:</label>
+          <input type="password" id="registerPasswordRepeat" name="registerPasswordRepeat" required><br>
+          <button type="submit">Registrieren</button>
+        </form>
+        </script>
+      </div>
+    </div>
+    <div id="registerSuccessModal" class="login-modal" style="display:none;">
+      <div class="login-modal-content">
+        <span class="close" id="closeRegisterSuccessModal">&times;</span>
+        <h2>Registrierung erfolgreich!</h2>
+        <p>Ihr Konto wurde erfolgreich erstellt. Sie können sich jetzt anmelden.</p>
+      </div>
+    </div>
+    <div style="position:fixed; top:24px; left:24px; z-index:3000; display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+  <button id="loginBtn" class="login-btn">Anmelden</button>
+  <div id="userDisplay" style="display:none; padding:8px 16px; background:#f2f2f2; color:#333; border-radius:20px; box-shadow:0 2px 8px rgba(0,0,0,0.06); font-weight:bold;"></div>
+</div>
+
+<iframe 
+    src="https://docs.google.com/document/d/e/2PACX-1vSS-eUMj6bvVavpWbpeJLoxOVY7vEvL9bybRBqHlNF4v4czVveyibJACR1KZ9P6_iah_MwbUAB9tWqS/pub?embedded=true" 
+    style="width:100%;min-height:150px;border:none;padding:0;margin:0;display:block;background:white;">
+</iframe>
+<div id="mainFormContainer">
+  <div class="info-box important" style="padding:0;">
+    <h3 style="padding:16px 16px 0 16px;">Wichtige Informationen vom Hort:</h3>
+  </div>
+  <div class="info-box">
+    <p>Der Heimgehzettel wird wöchentlich am Freitag zurückgesetzt. Änderungen können täglich bis 10 Uhr vorgenommen werden (zwischen 10 und 17 Uhr ist der Heimgehzettel gesperrt).</p>
+  </div>
+  <header>
+    <h1>Heimgehzettel Grundschule Auma</h1>
+  </header>
+  <form id="heimgehzettelForm">
+    <div class="form-group">
+      <label for="email">E-Mail-Adresse *</label>
+      <input type="email" id="email" name="email" required>
+                <label for="email">E-Mail-Adresse *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="childName">Name des Kindes (Vor- und Nachname) *</label>
+                <input type="text" id="childName" name="childName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="class">Klasse *</label>
+                <select id="class" name="class" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="1a">Klasse 1</option>
+                    <option value="1b">Klasse 2</option>
+                    <option value="2a">Klasse 3</option>
+                    <option value="2b">Klasse 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Darf Ihr Kind alleine nach Hause gehen? *</label>
+                <div class="radio-group-with-other">
+                    <div class="radio-group">
+                        <label><input type="radio" name="aloneHome" value="ja" required> Ja</label>
+                        <label><input type="radio" name="aloneHome" value="nein"> Nein</label>
+                        <label><input type="radio" name="aloneHome" value="bus"> Bus</label>
+                        <label class="radio-with-input">
+                            <input type="radio" name="aloneHome" value="sonstiges" id="aloneHomeSonstiges">
+                            <span>Sonstiges:</span>
+                            <input type="text" name="aloneHomeOther" id="aloneHomeOther" class="other-input" placeholder="Anmerkungen">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weekdays">
+                <!-- Montag -->
+                <div class="day-group">
+                    <h3>Montag *</h3>
+                    <select name="monday" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="nachUnterricht">Nach dem Unterricht</option>
+                        <option value="nachMittagessen">Nach dem Mittagessen</option>
+                        <option value="mittagsbus">Mittagsbus</option>
+                        <option value="nachmittagsbus">Nachmittagsbus</option>
+                        <option value="14uhr">14:00 Uhr</option>
+                        <option value="15uhr">15:00 Uhr</option>
+                        <option value="ab16uhr">ab 16:00 Uhr</option>
+                        <option value="krank">Krank</option>
+<option value="feiertag">Feiertag</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <input type="text" name="mondayOther" class="other-input" style="display: none;" placeholder="Bitte angeben">
+                </div>
+
+                <!-- Dienstag -->
+                <div class="day-group">
+                    <h3>Dienstag *</h3>
+                    <select name="tuesday" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="nachUnterricht">Nach dem Unterricht</option>
+                        <option value="nachMittagessen">Nach dem Mittagessen</option>
+                        <option value="mittagsbus">Mittagsbus</option>
+                        <option value="nachmittagsbus">Nachmittagsbus</option>
+                        <option value="14uhr">14:00 Uhr</option>
+                        <option value="15uhr">15:00 Uhr</option>
+                        <option value="ab16uhr">ab 16:00 Uhr</option>
+                        <option value="krank">Krank</option>
+<option value="feiertag">Feiertag</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <input type="text" name="tuesdayOther" class="other-input" style="display: none;" placeholder="Bitte angeben">
+                </div>
+
+                <!-- Mittwoch -->
+                <div class="day-group">
+                    <h3>Mittwoch *</h3>
+                    <select name="wednesday" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="nachUnterricht">Nach dem Unterricht</option>
+                        <option value="nachMittagessen">Nach dem Mittagessen</option>
+                        <option value="mittagsbus">Mittagsbus</option>
+                        <option value="nachmittagsbus">Nachmittagsbus</option>
+                        <option value="14uhr">14:00 Uhr</option>
+                        <option value="15uhr">15:00 Uhr</option>
+                        <option value="ab16uhr">ab 16:00 Uhr</option>
+                        <option value="krank">Krank</option>
+<option value="feiertag">Feiertag</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <input type="text" name="wednesdayOther" class="other-input" style="display: none;" placeholder="Bitte angeben">
+                </div>
+
+                <!-- Donnerstag -->
+                <div class="day-group">
+                    <h3>Donnerstag *</h3>
+                    <select name="thursday" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="nachUnterricht">Nach dem Unterricht</option>
+                        <option value="nachMittagessen">Nach dem Mittagessen</option>
+                        <option value="mittagsbus">Mittagsbus</option>
+                        <option value="nachmittagsbus">Nachmittagsbus</option>
+                        <option value="14uhr">14:00 Uhr</option>
+                        <option value="15uhr">15:00 Uhr</option>
+                        <option value="ab16uhr">ab 16:00 Uhr</option>
+                        <option value="krank">Krank</option>
+<option value="feiertag">Feiertag</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <input type="text" name="thursdayOther" class="other-input" style="display: none;" placeholder="Bitte angeben">
+                </div>
+
+                <!-- Freitag -->
+                <div class="day-group">
+                    <h3>Freitag *</h3>
+                    <select name="friday" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="nachUnterricht">Nach dem Unterricht</option>
+                        <option value="nachMittagessen">Nach dem Mittagessen</option>
+                        <option value="mittagsbus">Mittagsbus</option>
+                        <option value="nachmittagsbus">Nachmittagsbus</option>
+                        <option value="14uhr">14:00 Uhr</option>
+                        <option value="15uhr">15:00 Uhr</option>
+                        <option value="ab16uhr">ab 16:00 Uhr</option>
+                        <option value="krank">Krank</option>
+<option value="feiertag">Feiertag</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <input type="text" name="fridayOther" class="other-input" style="display: none;" placeholder="Bitte angeben">
+                </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" name="privacy" required>
+                    <span>Ja, ich habe die <a href="https://foerderverein-grundschule-auma.de/datenschutzerklaerung/" target="_blank">Datenschutzerklärung</a> zur Kenntnis genommen und bin damit einverstanden, dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden. Meine Daten werden dabei nur streng zweckgebunden zur Bearbeitung und Beantwortung meiner Anfrage genutzt. *</span>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submitBtn">Absenden</button>
+                <button type="reset" id="resetBtn">Zurücksetzen</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="confirmation" class="confirmation" style="display: none;">
+        <h2>Vielen Dank für Ihre Angaben!</h2>
+        <p>Sie erhalten in Kürze eine Bestätigungs-E-Mail mit einem Link, über den Sie Ihre Angaben bis 10 Uhr ändern können.</p>
+        <p>Bitte bewahren Sie diese E-Mail für eventuelle Änderungen auf.</p>
+    </div>
+
+    <style>
+    </style>
+    <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

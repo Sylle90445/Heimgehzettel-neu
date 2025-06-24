@@ -1,0 +1,118 @@
+[
+  {
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "jan",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "nachUnterricht",
+      "tuesday": "nachUnterricht",
+      "wednesday": "nachUnterricht",
+      "thursday": "nachUnterricht",
+      "friday": "nachUnterricht",
+      "privacy": true
+    },
+    "timestamp": 1750655242230
+  },
+  {
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "jan",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "nachMittagessen",
+      "tuesday": "nachUnterricht",
+      "wednesday": "nachUnterricht",
+      "thursday": "nachUnterricht",
+      "friday": "nachUnterricht",
+      "privacy": true
+    },
+    "timestamp": 1750655289024
+  },
+  {
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "jan",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "14uhr",
+      "tuesday": "14uhr",
+      "wednesday": "14uhr",
+      "thursday": "14uhr",
+      "friday": "14uhr",
+      "privacy": true
+    },
+    "timestamp": 1750655885752
+  },
+  {
+    "id": "mc8niwcr-hvrexf",
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "aaaaaaa",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "15uhr",
+      "tuesday": "15uhr",
+      "wednesday": "15uhr",
+      "thursday": "15uhr",
+      "friday": "15uhr",
+      "privacy": true
+    },
+    "timestamp": 1750656240459
+  },
+  {
+    "id": "mc8nj066-b8m8th",
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "aaaaaaa",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "15uhr",
+      "tuesday": "15uhr",
+      "wednesday": "15uhr",
+      "thursday": "15uhr",
+      "friday": "15uhr",
+      "privacy": true
+    },
+    "timestamp": 1750656245406
+  },
+  {
+    "id": "mc8nj8fa-za70fr",
+    "email": "janzoerkler@gmail.com",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "aaaaaaa",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "15uhr",
+      "tuesday": "15uhr",
+      "wednesday": "15uhr",
+      "thursday": "15uhr",
+      "friday": "15uhr",
+      "privacy": true
+    },
+    "timestamp": 1750656256102
+  },
+  {
+    "id": "mc8nlpw5-moeusf",
+    "email": "janzoerkler@gmx.de",
+    "data": {
+      "email": "janzoerkler@gmx.de",
+      "childName": "aaaaaaa",
+      "class": "1a",
+      "aloneHome": "ja",
+      "monday": "15uhr",
+      "tuesday": "15uhr",
+      "wednesday": "15uhr",
+      "thursday": "15uhr",
+      "friday": "15uhr",
+      "privacy": true
+    },
+    "timestamp": 1750656372053
+  }
+]

@@ -11,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(__dirname));
+
 const DB_PATH = path.join(__dirname, 'db.json');
 
 function readUsers() {
